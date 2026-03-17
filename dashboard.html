@@ -22,78 +22,84 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <div class="left-sidebar">
-            <div class="top">
-                <ul>
-                    <li><a href="dashboard.html">Calendar</a></li>
-                    <li><a href="viewtask.html">Tasks</a></li>
-                    <li><a href="timer.html">Focus Mode</a></li>
-                    <hr>
-                    <li><a href="addtask.html">Add Task</a></li>
-                </ul>
+    <main>
+        
+        <section>
+            <div class="left-sidebar">
+                <div class="top">
+                    <ul>
+                        <li><a href="dashboard.html">Calendar</a></li>
+                        <li><a href="viewtask.html">Tasks</a></li>
+                        <li><a href="timer.html">Focus Mode</a></li>
+                        <hr>
+                        <li><a href="addtask.html">Add Task</a></li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a onclick="logout()">Logout</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="bottom">
-                <ul>
-                    <li><a href="settings.html">Settings</a></li>
-                    <li><a onclick="logout()">Logout</a></li>
-                </ul>
-            </div>
+        </section>
+        <div class="right-area">
+            <div class="right-sidebar">
+                <section>
+                <div class="main-content">
+                    <div class="hero">
+                        <h2 id="greeting">Hello,Sarah!</h2>
+                        <p>Here's what's happening with your deadlines today.</p>
+                    </div>
+                    <div class="quick-actions">
+                        <div class="action-card">
+                            <i class="fa fa-plus"></i>
+                            <h3>Enter Focus Mode</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="month-year">
+                            <h2>February 2026</h2>
+                            <p>You have 8 deadlines this month</p>
+                        </div>
+                        <div class="calendar-nav">
+                            <button class="prev-month"><i class="fa fa-arrow-left"></i></button>
+                            <button class="next-month"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-day">Sun</div>
+                        <div class="calendar-day">Mon</div>
+                        <div class="calendar-day">Tue</div>
+                        <div class="calendar-day">Wed</div>
+                        <div class="calendar-day">Thu</div>
+                        <div class="calendar-day">Fri</div>
+                        <div class="calendar-day">Sat</div>
+                    </div>
+                    <div class="dates"></div>
+                </div>
+            
+            </section>
+            <section>
+                <div class="upcoming-deadlines">
+                    <div class="deadline-header">
+                        <h2>Upcoming deadlines</h2>
+                        <div class="new-task">
+                            <a href="addtask.html">Add New Task</a>
+                        </div>
+                    </div>
+                    <div class="deadlines">
+                        <div class="deadline-cards">
+                            <h3>Portfolio Submission</h3>
+                            <h3 id="time-left">10:20:50</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>    
         </div>
-    </section>
-    <section>   
-        <div class="main-content">
-            <div class="hero">
-                <h2 id="greeting">Hello,Sarah!</h2>
-                <p>Here's what's happening with your deadlines today.</p>
-            </div>
-            <div class="quick-actions">
-                <div class="action-card">
-                    <i class="fa fa-plus"></i>
-                    <h3>Enter Focus Mode</h3>
-                </div>
-            </div>
-        </div>
-        <div class="calendar-container">
-            <div class="calendar-header">
-                <div class="month-year">
-                    <h2>February 2026</h2>
-                    <p>You have 8 deadlines this month</p>
-                </div>
-                <div class="calendar-nav">
-                    <button class="prev-month">&lt;</button>
-                    <button class="next-month">&gt;</button>
-                </div>
-            </div>
-            <div class="calendar-body">
-                <div class="calendar-day">Sun</div>
-                <div class="calendar-day">Mon</div>
-                <div class="calendar-day">Tue</div>
-                <div class="calendar-day">Wed</div>
-                <div class="calendar-day">Thu</div>
-                <div class="calendar-day">Fri</div>
-                <div class="calendar-day">Sat</div>
-            </div>
-            <div class="dates"></div>
-        </div>
-    </section>
-    <section>
-        <div class="upcoming-deadlines">
-            <div class="deadline-header">
-                <h2>Upcoming deadlines</h2>
-                <div class="new-task">
-                    <a href="addtask.html">Add New Task</a>
-                </div>
-            </div>
-            <div class="deadlines">
-                <div class="deadline-cards">
-                    <h3>Portfolio Submission</h3>
-                    <h3 id="time-left">10:20:50</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-     <footer>
+        <footer>
         <div class="left copyright">
             <p>Copyright &copy; 2026 TaskIt. All rights reserved.</p>
         </div>
@@ -106,5 +112,9 @@
             </ul>
         </div>
     </footer>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
 </body>
 </html>

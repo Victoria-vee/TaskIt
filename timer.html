@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Mode - TaskIt</title>
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
+    <link rel="stylesheet" href="timer.css">
+    <script
+      src="https://kit.fontawesome.com/5be89bdbaf.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <main>
+        
+        <section>
+            <div class="exit-timer">
+               <a href="dashboard.html"><i class="fa fa-arrow-left"></i></a>
+            </div>
+        </section>
+                <div class="timer-container">
+                    <div class="timer-header">
+                        <h2>Focus Mode</h2>
+                        <p>Stay productive and manage your time effectively.</p>
+                    </div>
+                    
+                    <div class="timer-modes">
+                        <button class="mode-btn active" data-mode="focus">Focus</button>
+                        <button class="mode-btn" data-mode="shortBreak">Short Break</button>
+                        <button class="mode-btn" data-mode="longBreak">Long Break</button>
+                    </div>
+
+                    <div class="timer-display">
+                        <svg class="progress-ring" width="300" height="300">
+                            <circle class="progress-ring__circle_bg" stroke="var(--bg-color)" stroke-width="12" fill="transparent" r="140" cx="150" cy="150"/>
+                            <circle class="progress-ring__circle" stroke="var(--primary-color)" stroke-width="12" fill="transparent" r="140" cx="150" cy="150"/>
+                        </svg>
+                        <div class="time-left" id="time-left">25:00</div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button class="control-btn" id="start-btn">Start</button>
+                        <button class="control-btn secondary" id="reset-btn">Reset</button>
+                    </div>
+                </div>
+    </main>
+
+    <script src="timer.js"></script>
+</body>
+</html>

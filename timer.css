@@ -1,0 +1,208 @@
+/* Modern Cozy Theme */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    --bg-color: #fcf9f4; /* Soft cream */
+    --text-color: #4a403a; /* Warm dark brown */
+    --primary-color: #e09f7d; /* Soft terracotta/peach */
+    --primary-hover: #cc8b6b;
+    --accent-color: #8fb3a7; /* Sage green */
+    --link-color: #5c5552;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --shadow-soft: 0 10px 30px -10px rgba(131, 116, 109, 0.2);
+    --radius-lg: 24px;
+    --radius-md: 12px;
+    --radius-full: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.exit-timer{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}   
+.exit-timer a{
+    font-size: 1.2rem;
+    color: var(--link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0ebe6;
+    transition: all 0.3s ease;
+}
+.exit-timer a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}   
+
+.timer-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding:20px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    width: 100%;
+}
+
+.timer-header h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.timer-header p {
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.timer-modes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mode-btn {
+    background: var(--bg-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+    background: #f0ebe6;
+}
+
+.mode-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(224, 159, 125, 0.4);
+}
+
+.timer-display {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle_bg {
+    stroke: var(--bg-color);
+}
+
+.progress-ring__circle {
+    stroke: var(--primary-color);
+    stroke-dasharray: 879.646; /* 2 * pi * 140 */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-display.shortBreak .progress-ring__circle {
+    stroke: var(--accent-color);
+}
+.mode-btn.active[data-mode="shortBreak"] {
+    background: var(--accent-color);
+    box-shadow: 0 4px 10px rgba(143, 179, 167, 0.4);
+}
+
+.timer-display.longBreak .progress-ring__circle {
+    stroke: #7db8e0;
+}
+.mode-btn.active[data-mode="longBreak"] {
+    background: #7db8e0;
+    box-shadow: 0 4px 10px rgba(125, 184, 224, 0.4);
+}
+
+.time-left {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-full);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(224, 159, 125, 0.3);
+    width: 150px;
+}
+
+.timer-display.shortBreak ~ .timer-controls .control-btn#start-btn {
+    background: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(143, 179, 167, 0.3);
+}
+
+.timer-display.longBreak ~ .timer-controls .control-btn#start-btn {
+    background: #7db8e0;
+    box-shadow: 0 4px 15px rgba(125, 184, 224, 0.3);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.control-btn.secondary {
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: none;
+}
+
+.control-btn.secondary:hover {
+    background: #f0ebe6;
+    transform: translateY(0);
+}
