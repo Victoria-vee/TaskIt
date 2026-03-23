@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Deadline - TaskIt</title>
+    <link rel="stylesheet" href="addtask.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/5be89bdbaf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="backdrop">
+        <div class="modal">
+             <section>
+            <div class="exit-btn">
+               <a href="dashboard.html"><i class="fa fa-arrow-left"></i></a>
+            </div>
+        </section>
+            
+            <form class="modal-form" action="dashboard.html">
+                <div class="head">
+                    <h2>Add New Task</h2>
+                </div>
+                <div class="form-group full-width">
+                    <label>Task Title <span class="required">*</span></label>
+                    <input type="text" placeholder="e.g... CS 101  Assignment" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label>Description</label>
+                    <textarea placeholder="Briefly describe what needs to be done..." rows="4"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label>Date</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-calendar icon-left"></i>
+                            <input type="date" class="with-icon">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half-width">
+                        <label>Time</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-clock icon-left"></i>
+                            <input type="time" value="12:00" class="with-icon">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half-width select-group">
+                        <label>Timezone</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-globe icon-left"></i>
+                            <select class="with-icon select-box">
+                                <option>UTC-5 (EST)</option>
+                                <option>UTC+0 (GMT)</option>
+                                <option>UTC+1 (CET)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half-width select-group">
+                        <label>Repeat</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-retweet icon-left"></i>
+                            <select class="with-icon select-box">
+                                <option>Does not repeat</option>
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reminder-box">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="reminder-text">
+                        <strong>Aggressive Reminders</strong>
+                        <p>We'll send you increasingly frantic emails as the deadline approaches.</p>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <a href="dashboard.html" class="btn-cancel">Cancel</a>
+                    <button type="submit" class="btn-save">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

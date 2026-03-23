@@ -1,0 +1,300 @@
+/* Modern Cozy Theme */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-color: #fcf9f4; /* Soft cream */
+    --text-color: #4a403a; /* Warm dark brown */
+    --primary-color: #e4baa3; /* Soft terracotta/peach */
+    --primary-hover: #cc8b6b;
+    --accent-color: #8fb3a7; /* Sage green */
+    --link-color: #5c5552;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --shadow-soft: 0 10px 30px -10px rgba(131, 116, 109, 0.2);
+    --radius-lg: 24px;
+    --radius-md: 12px;
+    --radius-full: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(241, 245, 249, 0.8); /* Soft semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.exit-btn{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.exit-btn a{
+    font-size: 1.2rem;
+    color: var(--link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+.exit-btn a:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+}   
+
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.required {
+    color: red;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: calc(50% - 8px);
+}
+
+/* Inputs & Textareas */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 14px;
+    /* border: 1px solid var(--primary-color); */
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    background-color: var(--primary-color);
+    transition: all 0.2s ease;
+    outline: none;
+    border: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 0.875rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border:2px solid var(--accent-color); 
+
+    /* border-color: var(--primary-hover); */
+    /* box-shadow: 0 0 0 3px rgba(91, 164, 252, 0.1); */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+/* Input wrappers with icons */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon-left {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    pointer-events: none;
+}
+
+input.with-icon,
+select.with-icon {
+    padding-left: 36px;
+}
+
+/* Select specific styling to remove default arrow and add custom spacing */
+/* select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.select-group .input-wrapper::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 14px;
+    font-size: 0.75rem;
+    pointer-events: none;
+} */
+
+/* Reminder Box (Checkbox) */
+.reminder-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background-color: var(--primary-color);
+    border-radius: var(--radius-md);
+    margin-top: 4px;
+}
+
+.custom-checkbox {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid var(--bg-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.reminder-text strong {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 2px;
+}
+
+.reminder-text p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+/* Form Footer */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 24px;
+    border-top: 1px solid #f1f5f9;
+}
+
+button, .btn-cancel {
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.btn-cancel{
+    border-radius: var(--radius-md);
+    padding: 8px 24px;
+    background-color: #93c5fd;
+}
+
+.btn-cancel:hover {
+    color: #fff; 
+    background-color: #ca5454;
+}
+
+.btn-save {
+    padding: 10px 24px;
+    background-color: var(--link-color); /* Soft blue for the button as in design */
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+.btn-save:hover {
+    background-color: var(--accent-color);
+}

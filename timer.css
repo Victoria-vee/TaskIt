@@ -38,12 +38,12 @@ ul {
     list-style: none;
 }
 
-.exit-timer{
+.exit-btn{
     position: absolute;
     top: 20px;
     left: 20px;
 }   
-.exit-timer a{
+.exit-btn a{
     font-size: 1.2rem;
     color: var(--link-color);
     display: flex;
@@ -55,7 +55,7 @@ ul {
     background-color: #f0ebe6;
     transition: all 0.3s ease;
 }
-.exit-timer a:hover {
+.exit-btn a:hover {
     background-color: var(--primary-color);
     color: #fff;
 }   
